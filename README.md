@@ -22,7 +22,7 @@ dependencies:
 ```dart
 import 'package:flutter_bspatch/flutter_bspatch.dart';
 
-await BsPatch.apply(
+await BsPatch.patch(
   oldFile: '/path/to/old_version.apk',
   patchFile: '/path/to/update.patch',
   newFile: '/path/to/new_version.apk',
@@ -33,7 +33,7 @@ await BsPatch.apply(
 
 ```dart
 try {
-  await BsPatch.apply(
+  await BsPatch.patch(
     oldFile: oldPath,
     patchFile: patchPath,
     newFile: newPath,

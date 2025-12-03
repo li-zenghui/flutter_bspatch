@@ -21,7 +21,7 @@ class BsPatchException implements Exception {
 ///
 /// 使用示例：
 /// ```dart
-/// await BsPatch.apply(
+/// await BsPatch.patch(
 ///   oldFile: '/path/to/old.apk',
 ///   patchFile: '/path/to/update.patch',
 ///   newFile: '/path/to/new.apk',
@@ -37,7 +37,7 @@ class BsPatch {
   /// [newFile] - 输出文件路径
   ///
   /// 在后台 Isolate 中执行，不阻塞 UI
-  static Future<void> apply({
+  static Future<void> patch({
     required String oldFile,
     required String patchFile,
     required String newFile,
