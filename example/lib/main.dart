@@ -1,8 +1,4 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bspatch/flutter_bspatch.dart';
 
 void main() {
@@ -28,21 +24,6 @@ class _MyAppState extends State<MyApp> {
     });
 
     try {
-      // 获取临时目录
-      final tempDir = Directory.systemTemp;
-      final oldFile = '${tempDir.path}/old_file.bin';
-      final patchFile = '${tempDir.path}/patch.bin';
-      final newFile = '${tempDir.path}/new_file.bin';
-
-      // 这里应该是实际的文件路径
-      // 示例仅展示 API 用法
-
-      // await BsPatch.apply(
-      //   oldFile: oldFile,
-      //   patchFile: patchFile,
-      //   newFile: newFile,
-      // );
-
       setState(() {
         _status =
             '✅ 文件补丁应用成功!\n\n'

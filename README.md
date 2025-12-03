@@ -4,10 +4,11 @@ Flutter 插件，提供 bspatch 二进制差分补丁功能。基于 [bsdiff](ht
 
 ## ✨ 特性
 
-- 🚀 **简洁 API** - 两个方法搞定一切
+- 🚀 **简洁 API** - 一个方法搞定一切
 - 📱 **全平台支持** - Android、iOS、macOS、Windows、Linux
 - ⚡ **高性能** - 基于原生 C 代码，通过 FFI 直接调用
 - 🔒 **异步执行** - 在后台 Isolate 中运行，不阻塞 UI
+- 📦 **兼容性好** - 同时支持 BSDIFF40 和 BSDIFF43 格式
 
 ## 📦 安装
 
@@ -18,39 +19,14 @@ dependencies:
 
 ## 🔧 使用方法
 
-### 方式一：文件路径
-
-适合大文件场景：
-
 ```dart
 import 'package:flutter_bspatch/flutter_bspatch.dart';
 
-// 应用补丁
 await BsPatch.apply(
   oldFile: '/path/to/old_version.apk',
   patchFile: '/path/to/update.patch',
   newFile: '/path/to/new_version.apk',
 );
-```
-
-### 方式二：内存字节
-
-适合小文件或内存操作场景：
-
-```dart
-import 'package:flutter_bspatch/flutter_bspatch.dart';
-
-// 应用补丁
-final Uint8List newData = await BsPatch.applyBytes(
-  oldData: oldBytes,
-  patchData: patchBytes,
-);
-```
-
-### 获取新文件大小
-
-```dart
-final int newSize = BsPatch.getNewSize(patchBytes);
 ```
 
 ## ⚠️ 错误处理
